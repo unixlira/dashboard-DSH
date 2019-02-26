@@ -1,0 +1,64 @@
+criar projeto:
+composer create-project --prefer-dist laravel/laravel <nome_projeto>
+
+iniciar servidor:
+php artisan serve
+
+acessar:
+localhost:8000
+
+Arquivos:
+
+- rotas: routes.php
+- base de dados: database.php
+- configuracoes gerais da aplicacao: .env
+- arquivos de visualização (telas) resources/views
+
+-> conjunto de telas(views) prontas de template: bestmomo scafold
+Incrementar composer.json e app.php com os codigos do plugin
+
+criando nova classe model (faz gerenciamento do BD select, insert...) no diretorio /app
+php artisan make:model <nome_modelo>
+
+criando migracao -> alterações na estrutura do BD | comando -m ja cria a Model automatico
+php artisan make:migration <nome_migracao> -m 
+
+aplicando migração:
+php artisan migrate
+
+desfazendo ultima migracao
+php artisan migrate:rollback
+
+criando arquivo de validacao de formularios (request) no diretorio app/http/requests
+php artisan make:request <nome_request>
+
+habilitar recurso de login:
+php artisan make:auth
+
+criando middleware para intermediar as acoes recorrentes da aplicacao(verificar se usuario ta logado, por ex.) app/http/middleware
+lembrando q pra funcionar, tem q registrar no kernel (app/http/kernel.php):
+php artisan make:middleware <nome_midd>
+
+arquivo databaseSeeder.php -> informa os valores a serem preenchidos na tabela ao criar uma nova com migrate
+
+executando os Seeders com argumento opcional:
+php artisan db:seed --class=<nome_do_seeder>
+
+-----comandos gerais-------
+parando a aplicacao em producao
+php artisan down
+
+voltando a aplicacao
+php artisan up
+
+ver todas as rotas:
+php artisan route:list
+
+ver todos os comandos artisan
+php artisan list
+
+ver detalhes de um comando
+php artisan help <comando>
+
+vendo mensagens inspiradoras
+php artisan inspire
